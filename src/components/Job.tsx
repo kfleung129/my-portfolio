@@ -10,8 +10,8 @@ type Props = {
 
 export default function Job(props: Props) {
   const { companyName, jobTitle, jobDescription, logoSrc } = props;
-  const jobDescriptioItems = jobDescription.map(description => (
-    <li>{description}</li>
+  const jobDescriptioItems = jobDescription.map((description, index) => (
+    <li key={index}>{description}</li>
   ))
 
   return (
