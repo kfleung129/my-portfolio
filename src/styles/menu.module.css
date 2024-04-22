@@ -1,7 +1,7 @@
 .menu {
   display: flex;
   flex-direction: row;
-  height: 3em;
+  height: 5vh;
   padding: 0 1.5em;
   align-items: center;
   justify-content: space-between;
@@ -29,6 +29,7 @@
 }
 
 .menuItem:hover {
+  cursor: pointer;
   background-color: var(--hover-color);
 }
 
@@ -48,6 +49,11 @@
 }
 
 .menuList {
+  border-radius: var(--menuitem-border-radius);
+  gap: .5em;
+  padding: .4em;
+  color: var(--font-color);
+  text-decoration: none;
   display: none;
   border-radius: var(--menuitem-border-radius);
   transition: .2s;
@@ -59,16 +65,40 @@
   cursor: pointer;
 }
 
+.menuPopup {
+  position: absolute;
+  color: white;
+  background: var(--secondary-color);
+  padding: .6em;
+  border-radius: 12px;
+  right: 1em;
+  top: 3.8em;
+  min-width: 12em;
+  display: none;
+  border: 1px solid;
+  border-color: var(--menu-border-color);
+}
+
+.openMenu {
+  display: block;
+}
+
 .heading {
   font-family: 'Permanent Marker';
   font-weight: 300;
 }
 
-@media only screen and (max-width: 600px) {
-  .menuItem {
+@media only screen and (max-width: 800px) {
+  .menuWrapper .menuItem {
     display: none;
   }
   .menuList {
     display: flex;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .menuPopup {
+    display: none;
   }
 }

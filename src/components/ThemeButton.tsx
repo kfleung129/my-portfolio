@@ -9,15 +9,17 @@ const iconMapper: any = {
   "light": MdLightMode
 }
 
-export default function Home() {
-  const [theme, setTheme] = useState(document.documentElement.getAttribute("data-theme") ?? "dark");
+export default function ThemeButton() {
+  const [theme, setTheme] = useState(window.localStorage.getItem("data-theme") ?? "dark");
   const Icon: IconType = iconMapper[theme];
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
+    window.localStorage.setItem("data-theme", theme);
+
   }, [theme]);
 
   const changeDataTheme = () => {
-    let newTheme = theme === "dark" ? "light" : "dark";
+    let newTheme = (theme === "dark") ? "light" : "dark";
     setTheme(newTheme);
   }
 

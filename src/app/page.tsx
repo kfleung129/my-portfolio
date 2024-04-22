@@ -1,10 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import Header from "@/components/Header";
+import styles from "@/styles/home.module.css";
 
 export default function Home() {
   return (
-    <div>
-      Test
+    <div className={styles.main}> 
+      <Header />
     </div>
   );
 }

@@ -1,10 +1,4 @@
 :root {
-  --primary-color: #ffffff;
-  --secondary-color: #818cab;
-  --font-color: #1b1b1b;
-  --bg-color: #161625;
-  --heading-color: #818cab;
-  --hover-colr: rgb(61, 61, 61);
   --menuitem-border-radius: 6px;
 }
 
@@ -15,6 +9,23 @@
   --bg-color: #161625;
   --heading-color: #818cab;
   --hover-color: rgb(56, 56, 56);
+  --menu-border-color: rgb(46, 46, 46);
+  --slogan-color: rgb(170, 170, 170);
+  --tag-color: linear-gradient(rgb(81, 69, 255), rgb(102, 54, 212));
+  --box-shadow-color: white;
+}
+
+[data-theme="light"] {
+  --primary-color: #ffffff;
+  --secondary-color: #f0f0f0;
+  --font-color: #1b1b1b;
+  --bg-color: #161625;
+  --heading-color: #818cab;
+  --hover-color: rgb(190, 190, 190);
+  --menu-border-color: rgb(212, 212, 212);
+  --slogan-color: rgb(44, 44, 44);
+  --tag-color: linear-gradient(rgb(21, 255, 110), rgb(42, 224, 26));
+  --box-shadow-color: rgb(228, 228, 228);
 }
 
 @font-face {
@@ -30,6 +41,14 @@
   src: url('../assets/Permanent_Marker/PermanentMarker-Regular.ttf');
   src: url('../assets/Permanent_Marker/PermanentMarker-Regular.ttf');
   font-style: normal;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 * {
