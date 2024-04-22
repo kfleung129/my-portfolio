@@ -18,7 +18,7 @@ export default function Menu() {
         <MenuItem name="About" href="/about" />
         <MenuItem name="Project" href="/project" />
         <MenuItem name="Contact" href="/contact" />
-        <MenuList name="MenuList" value={isOpenMenu} handler={setOpenMenu}/>
+        <MenuList value={isOpenMenu} handler={setOpenMenu}/>
       </div>
       <MenuPopup isOpenMenu={isOpenMenu} />
     </div>

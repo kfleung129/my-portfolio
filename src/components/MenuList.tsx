@@ -5,8 +5,8 @@ import { IconType } from "react-icons";
 import { TiThMenu } from "react-icons/ti";
 
 type Props = {
-  value: Boolean,
-  handler: (value: Boolean) => void,
+  value: boolean,
+  handler: (value: boolean) => void,
 };
 
 export default function MenuList(props: Props) {
