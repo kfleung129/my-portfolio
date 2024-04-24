@@ -8,7 +8,7 @@ type Props = {
 export default function LevelBar(props: Props) {
   const { value } = props;
   const barWidth = `${value}%`;
-  console.log(barWidth);
+
   return (
     <div
         className={styles.levelBar}

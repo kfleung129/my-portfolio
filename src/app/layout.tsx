@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import Menu from "@/components/Menu";
+import Background from "@/components/HomeBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,12 @@ export default function RootLayout({
       <link rel="icon" type="image/png" sizes="32x32" href="/devdog.png" />
       <body className={inter.className}>
         <Menu />
-        {children}
+        <Background />
+        <div className="main">
+          <div className="content">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

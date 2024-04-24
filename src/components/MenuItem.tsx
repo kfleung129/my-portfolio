@@ -10,7 +10,7 @@ import { BsStack } from "react-icons/bs";
 type Props = {
   name: string,
   href: string,
-  isMenuList?: boolean
+  handler: (value: boolean) => void,
 };
 
 const iconMapper: any = {
@@ -21,11 +21,11 @@ const iconMapper: any = {
 }
 
 export default function MenuItem(props: Props) {
-  const { name, href, isMenuList } = props;
+  const { name, href, handler } = props;
   const Icon: IconType = iconMapper[name];
 
   return (
-    <Link href={href} className={styles.menuItem}>
+    <Link href={href} className={styles.menuItem} onClick={() => handler(false)}>
       <Icon />
       <span>{name}</span>
     </Link>

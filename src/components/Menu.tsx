@@ -10,17 +10,19 @@ export default function Menu() {
   const [isOpenMenu, setOpenMenu] = useState(false);
 
   return (
-    <div className={styles.menu}>
-      <h2 className={styles.heading}>Jason Leung</h2>
-      <div className={styles.menuWrapper}>
-        <ThemeButton />
-        <MenuItem name="Home" href="/" />
-        <MenuItem name="About" href="/about" />
-        <MenuItem name="Project" href="/project" />
-        <MenuItem name="Contact" href="/contact" />
-        <MenuList value={isOpenMenu} handler={setOpenMenu}/>
+    <div className={styles.main}>
+      <div className={styles.menu}>
+        <h2 className={styles.heading}>Jason Leung</h2>
+        <div className={styles.menuWrapper}>
+          <ThemeButton />
+          <MenuItem name="Home" href="/" handler={setOpenMenu} />
+          <MenuItem name="About" href="/about" handler={setOpenMenu} />
+          <MenuItem name="Project" href="/project" handler={setOpenMenu} />
+          <MenuItem name="Contact" href="/contact" handler={setOpenMenu} />
+          <MenuList value={isOpenMenu} handler={setOpenMenu}/>
+        </div>
+        <MenuPopup isOpenMenu={isOpenMenu} handler={setOpenMenu}/>
       </div>
-      <MenuPopup isOpenMenu={isOpenMenu} />
     </div>
   );
 }

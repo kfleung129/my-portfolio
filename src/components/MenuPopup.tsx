@@ -4,18 +4,19 @@ import MenuItem from "@/components/MenuItem";
 
 type Props = {
     isOpenMenu: Boolean
+    handler: (value: boolean) => void,
 }
 
 export default function MenuPopup(props: Props) {
-  const { isOpenMenu } = props;
+  const { isOpenMenu, handler } = props;
   const styleClassName = `${styles.menuPopup} ${isOpenMenu ? styles.openMenu : ""}`;
 
   return (
     <div className={styleClassName}>
-      <MenuItem name="Home" href="/" />
-      <MenuItem name="About" href="/about" />
-      <MenuItem name="Project" href="/project" />
-      <MenuItem name="Contact" href="/contact" />
+      <MenuItem name="Home" href="/" handler={handler} />
+      <MenuItem name="About" href="/about" handler={handler} />
+      <MenuItem name="Project" href="/project" handler={handler} />
+      <MenuItem name="Contact" href="/contact" handler={handler} />
     </div>
   );
 }

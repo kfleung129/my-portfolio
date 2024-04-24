@@ -1,0 +1,70 @@
+.homeBackground {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  position: sticky;
+  top: 0px;
+}
+
+#background{
+  fill: var(--background-color);
+  transition: 0.5s linear;
+}
+
+#moon {
+  transform: translateY(var(--time-translate-moon));
+  fill: var(--moon-color);
+  transition: 1.5s ease;
+}
+
+#far_mountain, #mountains, #sea {
+  filter: brightness(var(--background-brightness));
+  transition: 0.5s linear;
+}
+
+#mountains {
+  filter: brightness(var(--background-moutain-brightness));
+  transition: 0.5s linear;
+}
+
+#lighthouse {
+  filter: brightness(var(--background-lighthouse-brightness));
+  transition: 0.5s linear;
+}
+
+#lighthouse_lightblur2 circle {
+  fill: var(--background-lighthouse-color);
+  transition: 0.2s linear;
+}
+
+#lighthouse_lightblur2 circle {
+  animation: 4s light linear infinite;
+  animation-direction: alternate;
+}
+
+@keyframes light {
+  from {
+    filter: brightness(100%);
+  }
+  to {
+    filter: brightness(200%);
+  }
+}
+
+@keyframes sea {
+  from {
+    transform: translateX(10%);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .homeBackground {
+    position: fixed;
+    width: auto;
+    height: 100vh;
+  }
+}

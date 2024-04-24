@@ -1,3 +1,9 @@
+.main {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
 .menu {
   display: flex;
   flex-direction: row;
@@ -5,8 +11,6 @@
   padding: 0 1.5em;
   align-items: center;
   justify-content: space-between;
-  color: var(--font-color);
-  background-color: var(--primary-color);
   opacity: 100%;
 }
 
@@ -24,7 +28,6 @@
   border-radius: var(--menuitem-border-radius);
   gap: .5em;
   padding: .4em;
-  color: var(--font-color);
   text-decoration: none;
 }
 
@@ -39,7 +42,6 @@
   height: 1.8em;
   padding: .3em;
   transition: .2s;
-  background-color: var(--primary-color);
 }
 
 .themeButton:hover {
@@ -52,7 +54,6 @@
   border-radius: var(--menuitem-border-radius);
   gap: .5em;
   padding: .4em;
-  color: var(--font-color);
   text-decoration: none;
   display: none;
   border-radius: var(--menuitem-border-radius);
@@ -77,6 +78,7 @@
   display: none;
   border: 1px solid;
   border-color: var(--menu-border-color);
+  z-index: 1000;
 }
 
 .openMenu {

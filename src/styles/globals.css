@@ -11,8 +11,15 @@
   --hover-color: rgb(56, 56, 56);
   --menu-border-color: rgb(46, 46, 46);
   --slogan-color: rgb(170, 170, 170);
-  --tag-color: linear-gradient(rgb(81, 69, 255), rgb(102, 54, 212));
-  --box-shadow-color: white;
+  --tag-color: #8811ff;
+  --box-shadow-color: rgba(71, 71, 71, 0.24);
+  --moon-color: yellow;
+  --background-color: rgb(0, 67, 145);
+  --time-translate-moon: 0%;
+  --background-brightness: 65%;
+  --background-moutain-brightness: 90%;
+  --background-lighthouse-brightness: 80%;
+  --background-lighthouse-color: yellow;
 }
 
 [data-theme="light"] {
@@ -24,8 +31,15 @@
   --hover-color: rgb(190, 190, 190);
   --menu-border-color: rgb(212, 212, 212);
   --slogan-color: rgb(44, 44, 44);
-  --tag-color: linear-gradient(rgb(21, 255, 110), rgb(42, 224, 26));
-  --box-shadow-color: rgb(228, 228, 228);
+  --tag-color: #34dd7a;
+  --box-shadow-color: rgba(0, 0, 0, 0.24);
+  --moon-color: #ffa700;
+  --background-color: rgb(52, 146, 253);
+  --time-translate-moon: -30%;
+  --background-brightness: 125%;
+  --background-moutain-brightness: 95%;
+  --background-lighthouse-brightness: 90%;
+  --background-lighthouse-color: #FFFFFF;
 }
 
 @font-face {
@@ -56,4 +70,27 @@ body::-webkit-scrollbar {
   padding: 0;
   margin: 0;
   font-family: 'Roboto';
+  color: var(--font-color);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.content {
+  z-index: 999;
+  width: 80%;
+  background: var(--primary-color);
+  opacity: 98%;
+  box-shadow: var(--box-shadow-color) 0px 3px 20px;
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .content {
+    margin-top: 6em;
+  }
 }
