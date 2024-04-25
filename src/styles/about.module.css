@@ -66,11 +66,11 @@
 .skillWrapper {
   display: flex;
   flex-direction: row;
-  gap: 12em;
+  gap: 6em;
 }
 
 .tagWrapper {
-  width: 50%;
+  width: 40%;
   height: fit-content;
   display: flex;
   flex-direction: row;
@@ -96,12 +96,12 @@
 }
 
 .skillName {
-  min-width: 5.4em;
+  min-width: 6em;
   font-weight: 500;
 }
 
 .level {
-  width: 50%;
+  width: 60%;
   height: 16em;
   display: flex;
   flex-direction: column;
@@ -122,6 +122,7 @@
 
 .levelWrapper {  
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: center;
   gap: 0.6em;

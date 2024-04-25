@@ -19,6 +19,7 @@ export default function Skill() {
           <SkillTag>Node.js</SkillTag>
           <SkillTag>React.js</SkillTag>
           <SkillTag>Next.js</SkillTag>
+          <SkillTag>React Native</SkillTag>
           <SkillTag>Tensorflow</SkillTag>
           <SkillTag>Docker</SkillTag>
           <SkillTag>Linux</SkillTag>
@@ -31,6 +32,7 @@ export default function Skill() {
           <Level value={100}>React.js</Level>
           <Level value={90}>Python</Level>
           <Level value={80}>Next.js</Level>
+          <Level value={80}>React Native</Level>
           <Level value={80}>HTML5</Level>
           <Level value={80}>CSS3</Level>
           <Level value={70}>Node.js</Level>
