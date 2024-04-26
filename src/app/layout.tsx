@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Head from "next/head";
+import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import Menu from "@/components/Menu";
@@ -20,15 +20,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="icon" type="image/png" sizes="32x32" href="/devdog.png" />
-      <body className={inter.className}>
-        <Menu />
-        <Background />
-        <div className="main">
-          <div className="content">
-            {children}
+      <ThemeProvider enableSystem={false}>
+        <body className={inter.className}>
+          <Menu />
+          <Background />
+          <div className="test"></div>
+          <div className="main">
+            <div className="content">
+              {children}
+            </div>
           </div>
-        </div>
-      </body>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

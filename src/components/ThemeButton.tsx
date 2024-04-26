@@ -1,7 +1,8 @@
 "use client";
 import styles from "@/styles/menu.module.css";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useTheme } from "next-themes";
 import { IconType } from "react-icons";
 
 const iconMapper: any = {
@@ -10,20 +11,18 @@ const iconMapper: any = {
 }
 
 export default function ThemeButton() {
-  const [theme, setTheme] = useState("light");
+  const { theme, setTheme } = useTheme();
   let Icon: IconType = iconMapper[theme];
 
   useEffect(() => {
-    const userTheme = window.localStorage.getItem("data-theme") ?? theme;
+    const userTheme = window.localStorage.getItem("data-theme") ?? (theme ?? 'light');
     document.documentElement.setAttribute("data-theme", userTheme);
     window.localStorage.setItem("data-theme", userTheme);
-    console.log(theme)
+
   }, []);
 
   const changeDataTheme = () => {
     let newTheme = (theme === "dark") ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", theme);
-    window.localStorage.setItem("data-theme", theme);
     setTheme(newTheme);
   }
 
