@@ -45,7 +45,7 @@
 }
 
 .themeButton:hover {
-  background-color: var(--hover-color);
+  fill: var(--hover-color);
   transition: .2s;
   cursor: pointer;
 }
@@ -60,8 +60,8 @@
   transition: .2s;
 }
 
-.menuList:hover {
-  background-color: var(--hover-color);
+.menuList *:hover {
+  fill: var(--hover-color);
   transition: .2s;
   cursor: pointer;
 }

@@ -1,6 +1,6 @@
 "use client";
-import SkillTag from "@/components/SkillTag";
-import Level from "@/components/Level";
+import SkillTag from "./SkillTag";
+import Level from "./Level";
 import styles from "@/styles/about.module.css";
 
 export default function Skill() {

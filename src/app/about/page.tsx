@@ -1,7 +1,7 @@
 'use client';
 import styles from "@/styles/about.module.css";
-import WorkingExperience from "@/components/WorkingExperience";
-import Skill from "@/components/Skill";
+import WorkingExperience from "@/components/about/WorkingExperience";
+import Skill from "@/components/about/Skill";
 
 export default function Home() {
   return (

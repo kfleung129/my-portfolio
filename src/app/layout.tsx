@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { Suspense } from 'react';
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import Menu from "@/components/Menu";
-import Background from "@/components/HomeBackground";
+import Background from "@/components/Background";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,11 +14,17 @@ export const metadata: Metadata = {
   description: "Personal portfolio of Jason Leung",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const MainWrapper = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
+  return (
+    <div className="main">
+      <div className="content">
+        {children}
+      </div>
+    </div>
+  )
+}
+
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
       <link rel="icon" type="image/png" sizes="32x32" href="/devdog.png" />
@@ -24,12 +32,11 @@ export default function RootLayout({
         <body className={inter.className}>
           <Menu />
           <Background />
-          <div className="test"></div>
-          <div className="main">
-            <div className="content">
+          <Suspense fallback={<Loading />}>
+          <MainWrapper>
               {children}
-            </div>
-          </div>
+          </MainWrapper>
+          </Suspense>
         </body>
       </ThemeProvider>
     </html>

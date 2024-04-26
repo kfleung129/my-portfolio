@@ -1,6 +1,6 @@
 "use client";
 import styles from "@/styles/about.module.css";
-import Job from "@/components/Job";
+import Job from "./Job";
 
 export default function WorkingExperience() {
 

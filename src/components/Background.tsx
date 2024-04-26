@@ -1,7 +1,7 @@
 "use client";
 import "@/styles/home_background.css";
 
-export default function HomeBackground() {
+export default function Background() {
   return (
     <svg className="homeBackground" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g id="background" clip-path="url(#clip0_7_3)" fill="url(#paint0_linear_7_3)">

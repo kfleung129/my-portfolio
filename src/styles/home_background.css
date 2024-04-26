@@ -1,6 +1,6 @@
 .homeBackground {
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   position: sticky;
@@ -52,12 +52,12 @@
   }
 }
 
-@keyframes sea {
-  from {
-    transform: translateX(10%);
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
   }
-  to {
-    transform: translateX(-25%);
+  100% { 
+    transform: translate3d(85px,0,0);
   }
 }
 

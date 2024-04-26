@@ -1,5 +1,5 @@
 "use client";
-import LevelBar from "@/components/LevelBar"
+import LevelBar from "./LevelBar"
 import styles from "@/styles/about.module.css";
 import { FaReact, FaPython, FaHtml5, FaCss3Alt, FaNodeJs, FaJava, FaGitAlt, FaDocker, FaLinux } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
