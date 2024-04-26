@@ -5,14 +5,20 @@ import { useEffect } from "react";
 import { useTheme } from "next-themes";
 import { IconType } from "react-icons";
 
-const iconMapper: any = {
-  "dark": MdDarkMode,
-  "light": MdLightMode
+type IconMapper = {
+  dark: IconType,
+  light: IconType
+}
+
+const iconMapper: IconMapper = {
+  dark: MdDarkMode,
+  light: MdLightMode
 }
 
 export default function ThemeButton() {
   const { theme, setTheme } = useTheme();
-  let Icon: IconType = iconMapper[theme];
+  // prevent null theme value
+  let Icon: IconType | undefined = iconMapper[theme as keyof IconMapper];
 
   useEffect(() => {
     const userTheme = window.localStorage.getItem("data-theme") ?? (theme ?? 'light');
