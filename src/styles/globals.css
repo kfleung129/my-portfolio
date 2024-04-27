@@ -12,7 +12,7 @@
   --menu-border-color: rgb(46, 46, 46);
   --slogan-color: rgb(170, 170, 170);
   --tag-color: #9c3aff;
-  --box-shadow-color: rgba(71, 71, 71, 0.24);
+  --box-shadow-color: rgba(82, 82, 82, 0.19);
   --moon-color: yellow;
   --background-color: rgb(0, 67, 145);
   --time-translate-moon: 0%;
@@ -20,6 +20,7 @@
   --background-moutain-brightness: 90%;
   --background-lighthouse-brightness: 80%;
   --background-lighthouse-color: yellow;
+  --loader-color: yellow;
 }
 
 [data-theme="light"] {
@@ -32,7 +33,7 @@
   --menu-border-color: rgb(212, 212, 212);
   --slogan-color: rgb(44, 44, 44);
   --tag-color: #34dd7a;
-  --box-shadow-color: rgba(0, 0, 0, 0.24);
+  --box-shadow-color: rgba(0, 0, 0, 0.19);
   --moon-color: #ffa700;
   --background-color: rgb(52, 146, 253);
   --time-translate-moon: -30%;
@@ -40,6 +41,7 @@
   --background-moutain-brightness: 95%;
   --background-lighthouse-brightness: 90%;
   --background-lighthouse-color: #FFFFFF;
+  --loader-color: #ffa700;
 }
 
 @font-face {
@@ -91,26 +93,39 @@ body::-webkit-scrollbar {
   border-radius: 25px;
 }
 
-/* HTML: <div class="loader"></div> */
 .loader {
-  width: 100%;
-  height: 5em;
-  border-radius: 25px;
-  background:
-    radial-gradient(circle 11px at top,#0000 94%,#b0e5f3) 0 20px,
-    radial-gradient(circle 15px at top,#0000 94%,#5dc1e4) 0 10px,
-    radial-gradient(circle 16px at top,#0000 94%,#008cd9) 0 0   ;
-  background-size: 20px 100%;
-  background-repeat: repeat-x;
-  animation: l7 2s infinite linear;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 5%;
+  border-radius: 18px;
+  color: var(--loader-color);
+  border: 2px solid white;
 }
-@keyframes l7 {
-  50%  {background-position: 10px 15px,-10px 12px,15px 8px}
-  100% {background-position: 20px 20px,-20px 10px,20px 0px}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: currentColor;
+  animation: loading 2s forwards;
+}
+
+@keyframes loading {
+  100% { 
+    inset:0
+  }
 }
 
 @media only screen and (max-width: 1200px) {
   .content {
     margin-top: 6em;
+  }
+  .loader {
+    width: 70%;
   }
 }
