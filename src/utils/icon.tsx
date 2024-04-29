@@ -1,4 +1,4 @@
-import { FaReact, FaPython, FaHtml5, FaCss3Alt, FaNodeJs, FaJava, FaGitAlt, FaDocker, FaLinux } from "react-icons/fa";
+import { FaReact, FaPython, FaHtml5, FaCss3Alt, FaNodeJs, FaJava, FaGitAlt, FaDocker, FaLinux, FaVuejs } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { TbBrandNextjs, TbBrandReactNative, TbSql } from "react-icons/tb";
 import { BiLogoCPlusPlus } from "react-icons/bi";
@@ -29,6 +29,7 @@ const iconMapper: any = {
   "Docker": FaDocker,
   "Linux": FaLinux,
   "SpringBoot": SiSpring,
+  "Vue": FaVuejs
 }
 
 export function getIcon (name: string): IconType {

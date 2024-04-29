@@ -1,6 +1,7 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import SkillTag from "./SkillTag";
 import styles from "@/styles/slideshow.module.css";
 
 type Project = {
@@ -9,7 +10,15 @@ type Project = {
   href: string,
   description: string,
   info?: string,
-  languages?: string[]
+  techStack?: string[],
+}
+
+type Description = {
+  name: string,
+  description: string,
+  href: string,
+  info?: string,
+  techStack?: string[]
 }
 
 const projectDataList: Project[] = [
@@ -27,7 +36,15 @@ const projectDataList: Project[] = [
 
     Deliverables:
       Models that provides informative stock recommendations and predictions with high accuracy and fast response
-    `
+    `,
+    techStack: [
+      "Next.js",
+      "JavaScript",
+      "Python",
+      "Tensorflow",
+      "HTML5",
+      "CSS3",
+    ]
   },
   {
     name: "My-Wallet",
@@ -45,58 +62,86 @@ const projectDataList: Project[] = [
     Expense Analysis:
     The app provides visual representations (graphs and charts) of the user's expenses,
     allowing them to gain insights into their spending habits and identify areas where they can save money.
-    `
+    `,
+    techStack: [
+      "React Native",
+      "React.js",
+      "JavaScript",
+    ]
   },
   {
     name: "Vue-type-training",
     picUrl: "/vue-type-training.png",
     href: "https://github.com/kfleung129/vue-type-training",
-    description: "A Typing training website built by Vue"
+    description: "A Typing training website built by Vue",
+    info: `
+    Vue-Type-Training is a web application specifically designed to enhance typing skills using the Vue.js framework.
+    This platform offers an engaging and interactive typing experience for users of all levels,
+    aiming to improve their typing speed and accuracy.
+    `,
+    techStack: [
+      "Vue",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+    ]
   },
 ]
 
 export default function SlideShow() {
-  const [slide, setSlide] = useState(1);
-  const [projectPicUrlList, setProjectPicUrlList] = useState([]);
-  const [projectDescriptionList, setProjectDescriptionList] = useState([]);
+  const [slide, setSlide] = useState(0);
+  const [projectPicUrlList, setProjectPicUrlList] = useState<string[]>([]);
+  const [projectDescriptionList, setProjectDescriptionList] = useState<Description[]>([]);
 
   useEffect(() => {
-    const picUrlList = projectDataList.map(item => item.picUrl);
-    const projectDesList = projectDataList.map(item => ({ name: item.name, description: item.description, href: item.href, info: item.info }));
+    let picUrlList: string[] = [];
+    let projectDesList: Description[] = [];
+    picUrlList = projectDataList.map(item => item.picUrl) ?? [];
+    projectDesList  = projectDataList.map(item => ({ 
+      name: item.name, description: item.description,
+      href: item.href, info: item.info, techStack: item.techStack
+    }));
     setProjectPicUrlList(picUrlList);
     setProjectDescriptionList(projectDesList);
   }, [])
 
   const moveSlide = (val: number) => {
-    let newSlide = Math.max(0, (slide + val)) % 3
+    let newSlide = Math.max(0, (slide + val)) % projectPicUrlList.length;
     setSlide(newSlide)
   };
 
-  const imgItems = projectPicUrlList.map((url, index) => (
-    <img id={`s${index}`} src={url}/>
-  ));
-
-  const projectItems = projectDescriptionList.map(project => (
-    <>
-      <Link href={project.href} target="_blank" className={styles.projectName}>{project.name}</Link>
-      <p className={styles.projectDescription}>{project.description}</p>
-      <p className={styles.projectInfo}>{project.info}</p>
-    </>
+  const project = projectDescriptionList[slide];
+  const techStack = project?.techStack ?? [];
+  const techStackItems = techStack.map(item => (
+    <SkillTag showIcon>{item}</SkillTag>
   ));
 
   return (
     <div className={styles.sliderWrapper}>
       <div className={styles.slider}>
-        {imgItems}
+      <div className={styles.slideshow}>
+        <img key={slide} src={projectPicUrlList[slide]}/>
       </div>
       <div className={styles.sliderNav}>
-        <a className={`${styles.arrow} ${styles.leftArrow}`} href={`#s${slide}`} onClick={() => moveSlide(-1)}/>
-        <a className={`${styles.arrow} ${styles.rightArrow}`} href={`#s${slide}`} onClick={() => moveSlide(1)}/>
+        <div className={`${styles.arrow} ${styles.leftArrow}`} onClick={() => moveSlide(-1)}/>
+        <div className={`${styles.arrow} ${styles.rightArrow}`} onClick={() => moveSlide(1)}/>
+      </div>
       </div>
       <div className={styles.project}>
-        <img className={styles.logo} width={40} src="/devdog.png" />
-        {projectItems[slide]}
+        <div className={styles.projectMain}>
+          <img className={styles.logo} width={40} src="/devdog.png" />
+          <Link href={project?.href ?? '/'} target="_blank" className={styles.projectName}>{project?.name}</Link>
+          <p className={styles.projectDescription}>{project?.description}</p>
+          <p className={styles.projectInfo}>{project?.info}</p>
+        </div>
+        <div className={styles.techStackWrapper}>
+          <p className={styles.techStackHeader}>Language & Framework</p>
+          <div className={styles.techStack}>
+            {techStackItems}
+          </div>
+        </div>
       </div>
+      
     </div>
   );
 }

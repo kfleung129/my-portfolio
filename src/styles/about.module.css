@@ -81,9 +81,12 @@
 }
 
 .skillTag {
+  display: flex;
+  align-items: center;
   height: fit-content;
   background: var(--tag-color);
   padding: .3em .7em;
+  gap: 0.2em;
   width: fit-content;
   border-radius: 20px;
   letter-spacing: 0.2px;

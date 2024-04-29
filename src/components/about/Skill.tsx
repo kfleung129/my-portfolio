@@ -1,5 +1,5 @@
 "use client";
-import SkillTag from "./SkillTag";
+import SkillTag from "../SkillTag";
 import Level from "./Level";
 import styles from "@/styles/about.module.css";
 
@@ -20,6 +20,7 @@ export default function Skill() {
           <SkillTag>React.js</SkillTag>
           <SkillTag>Next.js</SkillTag>
           <SkillTag>React Native</SkillTag>
+          <SkillTag>Vue</SkillTag>
           <SkillTag>Tensorflow</SkillTag>
           <SkillTag>Docker</SkillTag>
           <SkillTag>Linux</SkillTag>
@@ -40,6 +41,7 @@ export default function Skill() {
           <Level value={60}>Git</Level>
           <Level value={60}>SQL</Level>
           <Level value={50}>C++</Level>
+          <Level value={50}>Vue</Level>
           <Level value={50}>Tensorflow</Level>
           <Level value={50}>Docker</Level>
           <Level value={50}>Linux</Level>

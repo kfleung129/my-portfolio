@@ -2,36 +2,49 @@
   position: relative;
   margin: 0 auto;
   max-width: 65%;
+  box-shadow: var(--box-shadow-color) 0px 10px 20px, var(--box-shadow-color) 0px 6px 6px;
 }
 
-.slider {
+.slideshow {
   display: flex;
   flex-direction: row;
   aspect-ratio: 16 / 9;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  border-radius: 0.4em;
+  border-radius: 0.4em 0.4em 0 0;
 }
 
-.slider::-webkit-scrollbar {
+.slideshow::-webkit-scrollbar {
   display: none;
 }
 
-.slider img {
+.slideshow img {
   flex: 1 0 100%;
   scroll-snap-align: start;
   scroll-behavior: smooth;
   object-fit: cover;
+  animation: fadeIn ease 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .sliderNav {
+  z-index: 2;
   display: flex;
-  gap: 4rem;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1rem;
-  position: relative;
-  top: -3.5rem;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .arrow {
@@ -43,6 +56,7 @@
 }
 
 .arrow:hover {
+  cursor: pointer;
   opacity: 100%;
 }
 
@@ -59,10 +73,15 @@
 .project {
   display: flex;
   flex-direction: column;
-  gap: 0.8em;
+  gap: 2em;
   padding: 2em;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow-color) 0px 10px 20px, var(--box-shadow-color) 0px 6px 6px;
+  border-radius: 0 0 0.4em 0.4em;
+}
+
+.projectMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
 }
 
 .projectName {
@@ -71,7 +90,7 @@
   transition: 0.2s;
 }
 
-.projectName:hover {
+.projectName:hover, .techStackHeader:hover {
   color: var(--hover-color);
   text-decoration: solid;
   transition: color 0.2s;
@@ -92,6 +111,26 @@
   right: 0;
 }
 
+.techStackWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.techStackHeader {
+  font-size: 1.6em;
+  text-decoration: none;
+  transition: 0.2s;
+  font-weight: 400;
+  transition: 0.2s;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em;
+}
+
 @keyframes autoslide {
   0% {
     transform: translateX(-100%)
@@ -101,6 +140,15 @@
   }
   100% {
     transform: translateX(0%)
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
   }
 }
 

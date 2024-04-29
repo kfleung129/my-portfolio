@@ -24,7 +24,7 @@ const MainWrapper = ({ children }: Readonly<{ children: React.ReactNode; }>) => 
   )
 }
 
-export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <link rel="icon" type="image/png" sizes="32x32" href="/devdog.png" />
@@ -34,7 +34,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
           <Background />
           <Suspense fallback={<Loading />}>
           <MainWrapper>
-              {children}
+            {children}
           </MainWrapper>
           </Suspense>
         </body>
