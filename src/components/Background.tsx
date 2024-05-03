@@ -1,4 +1,3 @@
-"use client";
 import "@/styles/home_background.css";
 
 export default function Background() {

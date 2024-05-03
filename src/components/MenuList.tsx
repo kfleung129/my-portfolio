@@ -1,7 +1,5 @@
 "use client";
 import styles from "@/styles/menu.module.css";
-import { useState } from "react";
-import { IconType } from "react-icons";
 import { TiThMenu } from "react-icons/ti";
 
 type Props = {

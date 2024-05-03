@@ -7,6 +7,7 @@ import { IconType } from "react-icons";
 import { AiFillHome } from "react-icons/ai";
 import { IoPersonSharp } from "react-icons/io5";
 import { BsStack, BsFillChatRightTextFill } from "react-icons/bs";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const iconMapper: any = {
   "Home": AiFillHome,
@@ -29,7 +30,9 @@ const iconMapper: any = {
   "Docker": FaDocker,
   "Linux": FaLinux,
   "SpringBoot": SiSpring,
-  "Vue": FaVuejs
+  "Vue": FaVuejs,
+  "dark": MdLightMode,
+  "light": MdDarkMode
 }
 
 export function getIcon (name: string): IconType {

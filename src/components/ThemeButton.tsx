@@ -1,41 +1,24 @@
-"use client";
 import styles from "@/styles/menu.module.css";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { useEffect } from "react";
+import { getIcon } from "@/utils/icon";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { IconType } from "react-icons";
-
-type IconMapper = {
-  dark: IconType,
-  light: IconType
-}
-
-const iconMapper: IconMapper = {
-  dark: MdDarkMode,
-  light: MdLightMode
-}
 
 export default function ThemeButton() {
   const { theme, setTheme } = useTheme();
-  // prevent null theme value
-  let Icon: IconType | undefined = iconMapper[theme as keyof IconMapper];
+  const [mounted, setMounted] = useState(false);
+  const Icon: IconType = getIcon(theme ?? '');
 
   useEffect(() => {
-    const userTheme = window.localStorage.getItem("data-theme") ?? (theme ?? 'light');
-    document.documentElement.setAttribute("data-theme", userTheme);
-    window.localStorage.setItem("data-theme", userTheme);
-
+    setMounted(true);
   }, []);
 
-  const changeDataTheme = () => {
-    let newTheme = (theme === "dark") ? "light" : "dark";
-    setTheme(newTheme);
-  }
+  if(!mounted) return null;
 
   return (
     <Icon
       className={styles.themeButton}
-      onClick={changeDataTheme}
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     />
   );
 }

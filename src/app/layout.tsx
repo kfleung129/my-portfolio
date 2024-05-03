@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from 'react';
-import { ThemeProvider } from "next-themes";
-import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+import Provider from "./provider";
 import Menu from "@/components/Menu";
 import Background from "@/components/Background";
 import Loading from "./loading";
@@ -26,9 +25,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <link rel="icon" type="image/png" sizes="32x32" href="/devdog.png" />
-      <ThemeProvider enableSystem={false}>
+      <Provider>
         <body>
-          <Menu />
+          <Menu/>
           <Background />
           <Suspense fallback={<Loading />}>
           <MainWrapper>
@@ -36,7 +35,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </MainWrapper>
           </Suspense>
         </body>
-      </ThemeProvider>
+      </Provider>
     </html>
   );
 }
