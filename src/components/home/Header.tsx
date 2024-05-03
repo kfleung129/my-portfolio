@@ -19,7 +19,7 @@ export default function Header() {
             <div className={styles.description}>
                 <p>A student who willing to learn new technologies and highly passionate to solve programming problems.</p>
                 <p>A collaborative team player that always seeking for a chance to learn more from different IT areas that includes</p>
-                <p>Software Development, Information Security, Artificial Intelligence, and FinTech.</p>
+                <p className={styles.area}>Software Development, Information Security, Artificial Intelligence, and FinTech.</p>
             </div>
         </div>
     </div>

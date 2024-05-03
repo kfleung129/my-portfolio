@@ -16,7 +16,6 @@ export default function MenuPopup(props: Props) {
       <MenuItem name="Home" href="/" handler={handler} />
       <MenuItem name="About" href="/about" handler={handler} />
       <MenuItem name="Project" href="/project" handler={handler} />
-      <MenuItem name="Contact" href="/contact" handler={handler} />
     </div>
   );
 }

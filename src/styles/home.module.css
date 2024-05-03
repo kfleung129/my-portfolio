@@ -23,9 +23,17 @@
 
 .description {
   font-size: 0.6em;
-  letter-spacing: .8px;
   line-height: 130%;
   margin-top: 2em;
+}
+
+.description p {
+  margin-top: 0.8em;
+}
+
+.area {
+  font-weight: bold;
+  color: #4fb9af;
 }
 
 .profile img {

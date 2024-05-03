@@ -21,6 +21,7 @@
   --background-lighthouse-brightness: 80%;
   --background-lighthouse-color: yellow;
   --loader-color: yellow;
+  --home-interest-area: #4fb9af;
 }
 
 [data-theme="light"] {
@@ -42,6 +43,7 @@
   --background-lighthouse-brightness: 90%;
   --background-lighthouse-color: #FFFFFF;
   --loader-color: #ffa700;
+  --home-interest-area: #00b8a8;
 }
 
 @font-face {
