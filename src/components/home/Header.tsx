@@ -17,9 +17,9 @@ export default function Header() {
                 <h1 className={styles.slogan}>Hello I am Jason !</h1>
             </div>
             <div className={styles.description}>
-                <p>A student who willing to learn new thing and passionate to solve</p>
-                <p>programming problems. A good team player that always seeking</p>
-                <p>for a chance to know more about software development and web development.</p>
+                <p>A student who willing to learn new technologies and highly passionate to solve programming problems.</p>
+                <p>A collaborative team player that always seeking for a chance to learn more from different IT areas that includes</p>
+                <p>Software Development, Information Security, Artificial Intelligence, and FinTech.</p>
             </div>
         </div>
     </div>

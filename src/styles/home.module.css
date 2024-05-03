@@ -56,6 +56,21 @@
   gap: 1em;
 }
 
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2em 5em;
+  gap: 2em;
+}
+
+.footer svg:hover {
+  cursor: pointer;
+  fill: var(--hover-color);
+}
+
 @keyframes fade {
   from {
     opacity: 0;
@@ -78,5 +93,8 @@
   .sloganWrapper {
     flex-direction: column;
     font-size: 0.5em;
+  }
+  .footer {
+    padding: 2em 2em;
   }
 }
