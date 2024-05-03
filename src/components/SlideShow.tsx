@@ -113,7 +113,7 @@ export default function SlideShow() {
   const project = projectDescriptionList[slide];
   const techStack = project?.techStack ?? [];
   const techStackItems = techStack.map(item => (
-    <SkillTag showIcon>{item}</SkillTag>
+    <SkillTag key={item} showIcon>{item}</SkillTag>
   ));
 
   return (
