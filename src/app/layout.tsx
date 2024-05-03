@@ -7,8 +7,6 @@ import Menu from "@/components/Menu";
 import Background from "@/components/Background";
 import Loading from "./loading";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "Jason's space",
   description: "Personal portfolio of Jason Leung",
@@ -29,7 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <link rel="icon" type="image/png" sizes="32x32" href="/devdog.png" />
       <ThemeProvider enableSystem={false}>
-        <body className={inter.className}>
+        <body>
           <Menu />
           <Background />
           <Suspense fallback={<Loading />}>

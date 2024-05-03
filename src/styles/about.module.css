@@ -80,6 +80,10 @@
   gap: .6em;
 }
 
+.tagWrapper .skillTag {
+  animation: 1.2s popIn;
+}
+
 .skillTag {
   display: flex;
   align-items: center;
@@ -136,9 +140,33 @@
 
 .levelBar {
   background: var(--tag-color);
-  width: 100%;
   height: 1em;
   border-radius: 20px;
+  animation: 1.2s fadeInOut ease-in-out;
+}
+
+@keyframes popIn{
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  from {
+    width: 0%;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
