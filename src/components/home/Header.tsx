@@ -13,7 +13,7 @@ export default function Header() {
         </div>
         <div className={styles.introduction}>
             <div className={styles.sloganWrapper}>
-                <img className={styles.logo} src="/devdog.png" />
+                {/* <img className={styles.logo} src="/devdog.png" /> */}
                 <h1 className={styles.slogan}>Hello I am Jason !</h1>
             </div>
             <div className={styles.description}>

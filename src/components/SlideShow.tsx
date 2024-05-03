@@ -129,7 +129,7 @@ export default function SlideShow() {
       </div>
       <div className={styles.project}>
         <div className={styles.projectMain}>
-          <img className={styles.logo} width={40} src="/devdog.png" />
+          {/* <img className={styles.logo} width={40} src="/devdog.png" /> */}
           <Link href={project?.href ?? '/'} target="_blank" className={styles.projectName}>{project?.name}</Link>
           <p className={styles.projectDescription}>{project?.description}</p>
           <p className={styles.projectInfo}>{project?.info}</p>
