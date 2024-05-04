@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import SkillTag from "./SkillTag";
 import styles from "@/styles/slideshow.module.css";
@@ -24,7 +25,7 @@ type Description = {
 const projectDataList: Project[] = [
   {
     name: "FYP",
-    picUrl: "/fyp.png",
+    picUrl: require('@/assets/fyp.png'),
     href: "https://github.com/kfleung129/fyp",
     description: "A stock recommendaion system",
     info: `
@@ -48,7 +49,7 @@ const projectDataList: Project[] = [
   },
   {
     name: "My-Wallet",
-    picUrl: "/my-wallet.gif",
+    picUrl: require('@/assets//my-wallet.gif'),
     href: "https://github.com/kfleung129/my-wallet",
     description: "A Personal Transaction Recording App",
     info: `
@@ -71,7 +72,7 @@ const projectDataList: Project[] = [
   },
   {
     name: "Vue-type-training",
-    picUrl: "/vue-type-training.png",
+    picUrl: require('@/assets/vue-type-training.png'),
     href: "https://github.com/kfleung129/vue-type-training",
     description: "A Typing training website built by Vue",
     info: `
@@ -120,7 +121,18 @@ export default function SlideShow() {
     <div className={styles.sliderWrapper}>
       <div className={styles.slider}>
       <div className={styles.slideshow}>
-        <img key={slide} src={projectPicUrlList[slide]}/>
+        <Image
+          key={slide}
+          src={projectPicUrlList[slide]}
+          alt="slide"
+          sizes="100vw"
+          style={{
+              width: '100%',
+              height: 'auto',
+          }}
+          width={500}
+          height={300}
+        />
       </div>
       <div className={styles.sliderNav}>
         <div className={`${styles.arrow} ${styles.leftArrow}`} onClick={() => moveSlide(-1)}/>

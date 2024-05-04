@@ -1,4 +1,6 @@
 "use client";
+import profileImg from "@/assets/profile.png"
+import Image from "next/image";
 import styles from "@/styles/home.module.css";
 
 export default function Header() {
@@ -6,9 +8,16 @@ export default function Header() {
   return (
     <div className={styles.header}>
         <div className={styles.profile}>
-            <img
-                src="/profile.png"
+            <Image
+                src={profileImg}
                 alt="profile"
+                sizes="100vw"
+                style={{
+                    width: '100%',
+                    height: 'auto',
+                }}
+                width={500}
+                height={300}
             />
         </div>
         <div className={styles.introduction}>

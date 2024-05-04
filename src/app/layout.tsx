@@ -24,7 +24,7 @@ const MainWrapper = ({ children }: Readonly<{ children: React.ReactNode; }>) => 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <link rel="icon" type="image/png" sizes="32x32" href="/devdog.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
       <Provider>
         <body>
           <Menu/>
