@@ -10,7 +10,7 @@ export default function Footer() {
     <div className={styles.footer}>
       <Link target="_blank" href="https://www.linkedin.com/in/jason-leung-33a88022a/"><FaLinkedin size={25}/></Link>
       <Link target="_blank" href="https://www.github.com/kfleung129/"><FaGithub size={25}/></Link>
-      <Link target="_blank" href="mailto:deb@kfjasonleung@gmail.com"><SiGmail size={25}/></Link>
+      <Link target="_blank" href="mailto:kfjasonleung@gmail.com"><SiGmail size={25}/></Link>
     </div>
   );
 }
