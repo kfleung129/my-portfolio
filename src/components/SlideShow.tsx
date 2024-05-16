@@ -87,6 +87,23 @@ const projectDataList: Project[] = [
       "CSS3",
     ]
   },
+  {
+    name: "Jeansin",
+    picUrl: require('@/assets/jeansin.png'),
+    href: "https://github.com/kfleung129/jeansin",
+    description: "Online clothes shop",
+    info: `
+    Welcome to Jeansin, your ultimate online shopping destination for trending sneakers,
+    clothing, and accessories. Explore top brands, discover new arrivals,
+    and enjoy seamless shopping with multilingual support.
+    `,
+    techStack: [
+      "React.js",
+      "Next.js",
+      "HTML5",
+      "CSS3",
+    ]
+  },
 ]
 
 export default function SlideShow() {
